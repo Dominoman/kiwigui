@@ -1,0 +1,3274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>searchform</class>
+ <widget class="QDialog" name="searchform">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Fly data</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="1" column="1">
+          <widget class="QDateEdit" name="date_from"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QSpinBox" name="price_to"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDateEdit" name="return_from"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Nights in dst from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>nights_in_dst_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Return to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>return_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Nights in dst to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>nights_in_dst_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="nights_in_dst_from"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="max_fly_duration"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDateEdit" name="date_to"/>
+         </item>
+         <item row="6" column="3">
+          <widget class="QCheckBox" name="select_airlines_exclude">
+           <property name="text">
+            <string>Select airlines exclude</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Max fly duration:</string>
+           </property>
+           <property name="buddy">
+            <cstring>max_fly_duration</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Return from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>return_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="toolTip">
+            <string comment="Kiwi ID of the departure location. Usually it's the airport's IATA. It accepts multiple values separated by a comma. You can get the valid IDs using the Locations API. these IDs might be airport codes, city IDs, two letter country codes, metropolitan codes and radiuses as well as a subdivision, region, autonomous_territory, continent and specials (Points of interest, such as Times Square).  For example: 'LON' - checks every airport in London, 'LHR' - checks flights from London Heathrow, 'UK' - flights from the United Kingdom.  Some locations have the same code for airport and metropolis (city), e.g. DUS stands for metro code Duesseldorf, Moenchengladbach and Weeze as well as Duesseldorf airport. See the following examples:  'fly_from=city:DUS' will match all airports in &quot;DUS&quot;, &quot;MGL&quot; and &quot;NRN&quot; (all in the city of Duesseldorf) 'fly_from=airport:DUS' will only match airport &quot;DUS&quot; You can also search using a radius. It needs to be in form lat-lon-xkm. The number of decimal places for radius is limited to 6.  E.g.-23.24--47.86-500km for places around Sao Paulo." extracomment="xxx"/>
+           </property>
+           <property name="text">
+            <string>Fly from *:</string>
+           </property>
+           <property name="buddy">
+            <cstring>fly_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QLineEdit" name="select_stop_airport"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Date to *:</string>
+           </property>
+           <property name="buddy">
+            <cstring>date_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Price from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>price_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QSpinBox" name="nights_in_dst_to"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QDateEdit" name="return_to"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Date from *:</string>
+           </property>
+           <property name="buddy">
+            <cstring>date_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Fly to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>fly_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QSpinBox" name="price_from"/>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLineEdit" name="fly_to"/>
+         </item>
+         <item row="7" column="3">
+          <widget class="QCheckBox" name="select_stop_airport_exclude">
+           <property name="text">
+            <string>Select stop airport exclude</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Price to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>price_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLineEdit" name="select_airlines"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Select_airlines:</string>
+           </property>
+           <property name="buddy">
+            <cstring>select_airlines</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="fly_from"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Select stop airport</string>
+           </property>
+           <property name="buddy">
+            <cstring>select_stop_airport</cstring>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Passangers and luggages</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="adults"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="adult_hand_bag"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Child hold bag:</string>
+           </property>
+           <property name="buddy">
+            <cstring>child_hold_bag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="adult_hold_bag"/>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Children:</string>
+           </property>
+           <property name="buddy">
+            <cstring>children</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Adults:</string>
+           </property>
+           <property name="buddy">
+            <cstring>adults</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="child_hold_bag"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="child_hand_bag"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Infants:</string>
+           </property>
+           <property name="buddy">
+            <cstring>infants</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="infants"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Adult hold bag:</string>
+           </property>
+           <property name="buddy">
+            <cstring>adult_hold_bag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QSpinBox" name="children"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Child hand bag:</string>
+           </property>
+           <property name="buddy">
+            <cstring>child_hand_bag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Adult hand bag:</string>
+           </property>
+           <property name="buddy">
+            <cstring>adult_hand_bag</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>Selected cabins:</string>
+           </property>
+           <property name="buddy">
+            <cstring>selected_cabins</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="selected_cabins">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Economy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Economy premium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Business</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>First class</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Mix with cabins</string>
+           </property>
+           <property name="buddy">
+            <cstring>mix_with_cabins</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QComboBox" name="mix_with_cabins">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Economy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Economy premium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Business</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>First class</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Time and stopovers</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="3">
+          <widget class="QComboBox" name="comboBox_2">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>departure</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>arrival</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QComboBox" name="comboBox_4">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>departure</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>arrival</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="comboBox_3">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sunday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Monday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tuesday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Wednesday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Thursday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Friday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Saturday</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QComboBox" name="ret_dtime_to">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QTimeEdit" name="stopover_from"/>
+         </item>
+         <item row="6" column="3">
+          <widget class="QTimeEdit" name="stopover_to"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_30">
+           <property name="text">
+            <string>Arr. time to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>atime_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>Fly days:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_4</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="label_31">
+           <property name="text">
+            <string>Ret. dep. time to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>ret_dtime_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Fly days:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_3</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>Dep. time from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>dtime_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>Arr. time from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>atime_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>Stopover to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>stopover_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="dtime_from">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="ret_dtime_from">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="ret_atime_from">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLabel" name="label_34">
+           <property name="text">
+            <string>Ret. arr. time to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>ret_atime_to</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>Ret. arr. time from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>ret_atime_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QComboBox" name="atime_to">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QComboBox" name="dtime_to_2">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sunday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Monday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tuesday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Wednesday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Thursday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Friday</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Saturday</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>Fly days:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox_2</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>Stoppver from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>stopover_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_32">
+           <property name="text">
+            <string>Ret dep. time from:</string>
+           </property>
+           <property name="buddy">
+            <cstring>ret_dtime_from</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>Fly days:</string>
+           </property>
+           <property name="buddy">
+            <cstring>comboBox</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QComboBox" name="ret_atime_to">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Dep. time to:</string>
+           </property>
+           <property name="buddy">
+            <cstring>dtime_to_2</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="atime_from">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>00:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>01:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>02:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>03:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>04:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>05:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>06:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>07:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>08:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>09:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>10:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>11:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>13:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>14:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>15:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>16:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>17:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>20:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>21:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>22:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>23:00</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>24:00</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_37">
+           <property name="text">
+            <string>Max stopover:</string>
+           </property>
+           <property name="buddy">
+            <cstring>max_stopovers</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QSpinBox" name="max_stopovers"/>
+         </item>
+         <item row="7" column="2">
+          <widget class="QLabel" name="label_38">
+           <property name="text">
+            <string>Max sector stopovers</string>
+           </property>
+           <property name="buddy">
+            <cstring>max_sector_stopovers</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="3">
+          <widget class="QSpinBox" name="max_sector_stopovers"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Options</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_39">
+           <property name="text">
+            <string>Currency:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="currency">
+           <property name="placeholderText">
+            <string>HUF</string>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AED</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AFN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ALL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AMD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ANG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AOA</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ARS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AUD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AWG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AZN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BAM</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BBD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BDT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BGN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BHD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BIF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BMD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BND</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BOB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BRL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BSD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BTC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BTN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BWP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BYN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BZD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CAD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CDF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CHF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CLF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CLP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CNY</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>COP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CRC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CUC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CUP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CVE</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>CZK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DJF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DKK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DOP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DZD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>EEK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>EGP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ERN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ETB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>EUR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>FJD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>FKP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GBP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GEL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GGP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GHS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GIP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GMD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GNF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GTQ</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>GYD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HKD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HNL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HRK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HTG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>HUF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>IDR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ILS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>IMP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>INR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>IQD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>IRR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ISK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JEP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JMD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JOD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JPY</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KES</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KGS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KHR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KMF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KPW</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KRW</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KWD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KYD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>KZT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LAK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LBP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LKR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LRD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LSL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LTL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LVL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LYD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MAD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MDL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MGA</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MKD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MMK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MNT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MOP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MRO</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MTL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MUR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MVR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MWK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MXN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MYR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MZN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NAD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NGN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NIO</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NOK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NPR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NZD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>OMR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PAB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PEN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PGK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PHP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PKR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PLN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PYG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>QAR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>QUN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>RON</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>RSD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>RUB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>RWF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SAR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SBD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SCR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SDG</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SEK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SGD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SHP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SLL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SOS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SRD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>STD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SVC</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SYP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SZL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>THB</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TJS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TMT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TND</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TOP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TRY</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TTD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TWD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TZS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UAH</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UGX</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>USD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UYU</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>UZS</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>VEF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>VND</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>VUV</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>WST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>XAF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>XCD</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>XOF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>XPF</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>YER</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ZAR</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ZMK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ZMW</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ZWL</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_40">
+           <property name="text">
+            <string>Locale:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QComboBox" name="locale">
+           <property name="placeholderText">
+            <string>hu</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>ae</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ag</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ar</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>at</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>au</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>be</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>bg</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>bh</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>br</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>by</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ca</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ca-fr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ch</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cl</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cn</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>co</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ct</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cz</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>da</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>de</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>dk</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ec</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ee</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>el</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>en</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>es</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>fi</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>fr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>gb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>gr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hk</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>id</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ie</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>il</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>is</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>it</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ja</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>jo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>jp</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ko</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>kr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>kw</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>kz</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>lt</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>mx</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>my</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>nl</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>no</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>nz</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>om</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>pe</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ph</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>pl</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>pt</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>qa</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ro</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rs</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ru</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sa</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>se</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sg</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sk</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>sv</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>th</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>tr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>tw</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ua</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>uk</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>us</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>vn</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>za</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_41">
+           <property name="text">
+            <string>Partner market</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="partner_market"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_42">
+           <property name="text">
+            <string>Vehicle type:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QComboBox" name="vehicle_type">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>aircraft</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>bus</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>train</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="3" column="0">
+          <widget class="QCheckBox" name="conn_on_diff_airport">
+           <property name="text">
+            <string>Conn on diff airport</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="ret_to_diff_city">
+           <property name="text">
+            <string>Ret to diff city</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCheckBox" name="one_per_date">
+           <property name="text">
+            <string>One per date</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="ret_from_diff_airport">
+           <property name="text">
+            <string>Ret from diff airport</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="ret_from_diff_city">
+           <property name="text">
+            <string>Ret from diff city</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QCheckBox" name="ret_to_diff_airport">
+           <property name="text">
+            <string>Ret to diff airport</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QCheckBox" name="enable_vi">
+           <property name="text">
+            <string>Enable VI</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="one_for_city">
+           <property name="text">
+            <string>One for city</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="only_weekends">
+           <property name="text">
+            <string>Only weekends</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="only_working_days">
+           <property name="text">
+            <string>Only working days</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Open|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>fly_from</tabstop>
+  <tabstop>fly_to</tabstop>
+  <tabstop>date_from</tabstop>
+  <tabstop>date_to</tabstop>
+  <tabstop>return_from</tabstop>
+  <tabstop>return_to</tabstop>
+  <tabstop>nights_in_dst_from</tabstop>
+  <tabstop>nights_in_dst_to</tabstop>
+  <tabstop>max_fly_duration</tabstop>
+  <tabstop>price_from</tabstop>
+  <tabstop>price_to</tabstop>
+  <tabstop>select_airlines</tabstop>
+  <tabstop>select_airlines_exclude</tabstop>
+  <tabstop>select_stop_airport</tabstop>
+  <tabstop>select_stop_airport_exclude</tabstop>
+  <tabstop>adults</tabstop>
+  <tabstop>children</tabstop>
+  <tabstop>infants</tabstop>
+  <tabstop>adult_hold_bag</tabstop>
+  <tabstop>adult_hand_bag</tabstop>
+  <tabstop>child_hold_bag</tabstop>
+  <tabstop>child_hand_bag</tabstop>
+  <tabstop>selected_cabins</tabstop>
+  <tabstop>mix_with_cabins</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>dtime_from</tabstop>
+  <tabstop>dtime_to_2</tabstop>
+  <tabstop>atime_from</tabstop>
+  <tabstop>atime_to</tabstop>
+  <tabstop>ret_dtime_from</tabstop>
+  <tabstop>ret_dtime_to</tabstop>
+  <tabstop>ret_atime_from</tabstop>
+  <tabstop>ret_atime_to</tabstop>
+  <tabstop>stopover_from</tabstop>
+  <tabstop>stopover_to</tabstop>
+  <tabstop>max_stopovers</tabstop>
+  <tabstop>max_sector_stopovers</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
