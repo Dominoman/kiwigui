@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'searchform.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,7 +25,7 @@ class Ui_searchform(object):
     def setupUi(self, searchform):
         if not searchform.objectName():
             searchform.setObjectName(u"searchform")
-        searchform.resize(568, 280)
+        searchform.resize(572, 292)
         self.horizontalLayout = QHBoxLayout(searchform)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.tabWidget = QTabWidget(searchform)
@@ -179,7 +179,7 @@ class Ui_searchform(object):
 
         self.verticalLayout_2.addLayout(self.gridLayout)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_2)
 
@@ -293,7 +293,7 @@ class Ui_searchform(object):
 
         self.verticalLayout.addLayout(self.gridLayout_2)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
@@ -697,7 +697,7 @@ class Ui_searchform(object):
 
         self.verticalLayout_3.addLayout(self.gridLayout_3)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_3)
 
@@ -1058,7 +1058,7 @@ class Ui_searchform(object):
 
         self.verticalLayout_4.addLayout(self.gridLayout_5)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_4)
 
@@ -1069,7 +1069,7 @@ class Ui_searchform(object):
         self.buttonBox = QDialogButtonBox(searchform)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setOrientation(Qt.Vertical)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.Open|QDialogButtonBox.Save)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
 
         self.horizontalLayout.addWidget(self.buttonBox)
 
