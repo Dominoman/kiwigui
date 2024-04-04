@@ -1,5 +1,6 @@
 import sys
 from datetime import date, timedelta
+from urllib.parse import urlencode
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow, QApplication, QDialog, QPushButton, QDialogButtonBox
@@ -44,7 +45,7 @@ class SearchForm(QDialog, Ui_searchform):
         self.price_from.setSpecialValueText(" ")
         self.price_to.setValue(-1)
         self.price_to.setSpecialValueText(" ")
-        for control in [self.ret_from_diff_city, self.ret_to_diff_city, self.one_for_city, self.one_per_date]:
+        for control in [self.ret_from_diff_city, self.ret_to_diff_city, self.one_for_city, self.one_per_date,self.only_working_days, self.only_weekends,self.conn_on_diff_airport,self.ret_from_diff_airport,self.ret_to_diff_airport]:
             control.setCheckState(Qt.CheckState.PartiallyChecked)
 
     def load(self):
@@ -54,107 +55,69 @@ class SearchForm(QDialog, Ui_searchform):
         pass
 
     def generate_query(self) -> str:
-        query = f"fly_from={self.fly_from.text()}"
-        if self.fly_to.text() != "":
-            query += f"&fly_to={self.fly_to}"
-        d = self.date_from.date().toString("dd/MM/yyyy")
-        query += f"&date_from={d}"
-        d = self.date_to.date().toString("dd/MM/yyyy")
-        query += f"&date_to={d}"
-        if self.return_from.text().strip() != "":
-            d = self.return_from.date().toString("dd/MM/yyyy")
-            query += f"&return_from={d}"
-        if self.return_to.text().strip() != "":
-            d = self.return_from.date().toString("dd/MM/yyyy")
-            query += f"&return_from={d}"
-        if self.nights_in_dst_from.text().strip() != "":
-            query += f"&nights_in_dst_from={self.nights_in_dst_from.value()}"
-        if self.nights_in_dst_to.text().strip() != "":
-            query += f"&nights_in_dst_to={self.nights_in_dst_from.value()}"
-        if self.max_fly_duration.text().strip() != "":
-            query += f"&max_fly_duration={self.max_fly_duration.value()}"
-        if self.ret_from_diff_city.checkState() == Qt.CheckState.Checked:
-            query += "&ret_from_diff_city=True"
-        elif self.ret_from_diff_city.checkState() == Qt.CheckState.Unchecked:
-            query += "&ret_from_diff_city=False"
-        if self.ret_to_diff_city.checkState() == Qt.CheckState.Checked:
-            query += "&ret_to_diff_city=True"
-        elif self.ret_to_diff_city.checkState() == Qt.CheckState.Unchecked:
-            query += "&ret_to_diff_city=False"
-        if self.one_for_city.checkState() == Qt.CheckState.Checked:
-            query += "&one_for_city=1"
-        elif self.one_for_city.checkState() == Qt.CheckState.Unchecked:
-            query += "&one_for_city=0"
-        if self.one_per_date.checkState() == Qt.CheckState.Checked:
-            query += "&one_per_date=1"
-        elif self.one_per_date.checkState() == Qt.CheckState.Unchecked:
-            query += "&one_per_date=0"
-        if self.adults.value() > 0:
-            query += f"&adults={self.adults.value()}"
-        if self.children.value() > 0:
-            query += f"&children={self.children.value()}"
-        if self.infants.value() > 0:
-            query += f"&infants={self.infants.value()}"
-        if self.selected_cabins.currentIndex() > 0:
-            query += f"&selected_cabins={'MWCF'[self.selected_cabins.currentIndex() - 1]}"
-        if self.mix_with_cabins.currentIndex() > 0:
-            query += f"&mix_with_cabins={'MWCF'[self.mix_with_cabins.currentIndex() - 1]}"
-        if self.adult_hold_bag.text() != "":
-            query += f"&adult_hold_bag={self.adult_hold_bag}"
-        if self.adult_hand_bag.text() != "":
-            query += f"&adult_hand_bag={self.adult_hand_bag}"
-        if self.child_hold_bag.text() != "":
-            query += f"&child_hold_bag={self.child_hold_bag}"
-        if self.child_hand_bag.text() != "":
-            query += f"&child_hand_bag={self.child_hand_bag}"
-        for item in self.fly_days.selectedItems():
-            query += f"&fly_days={DAYS.index(item.text())}"
-        if self.fly_days_type.currentIndex() != 0:
-            query += f"&fly_days_type={self.fly_days_type.currentText()}"
-        for item in self.ret_fly_days.selectedItems():
-            query += f"&ret_fly_days={DAYS.index(item.text())}"
-        if self.ret_fly_days_type.currentIndex() != 0:
-            query += f"&ret_fly_days_type={self.ret_fly_days_type.currentText()}"
-        if self.only_working_days.checkState() == Qt.CheckState.Checked:
-            query += "&only_working_days=true"
-        elif self.only_working_days.checkState() == Qt.CheckState.Unchecked:
-            query += "&only_working_days=false"
-        if self.only_weekends.checkState() == Qt.CheckState.Checked:
-            query += "&only_weekends=true"
-        elif self.only_weekends.checkState() == Qt.CheckState.Unchecked:
-            query += "&only_weekends=false"
-        if self.partner_market.text() != "":
-            query += f"&partner_market={self.partner_market.text()}"
-        if self.currency.currentIndex() != 0:
-            query += f"&curr={self.currency.currentText()}"
-        if self.locale.currentIndex() != 0:
-            query += f"&local={self.locale.currentText()}"
-        if self.price_from.value() != 0:
-            query += f"&price_from={self.price_from.text()}"
-        if self.price_to.value() != 0:
-            query += f"&price_to={self.price_to.text()}"
-        if self.dtime_from.currentIndex() > 0:
-            query += f"&dtime_from={self.dtime_from.currentText()}"
-        if self.dtime_to.currentIndex() > 0:
-            query += f"&dtime_to={self.dtime_to.currentText()}"
-        if self.atime_from.currentIndex() > 0:
-            query += f"&atime_from={self.atime_from.currentText()}"
-        if self.atime_to.currentIndex() > 0:
-            query += f"&atime_to={self.atime_to.currentText()}"
-        if self.ret_dtime_from.currentIndex() > 0:
-            query += f"&ret_dtime_from={self.ret_dtime_from.currentText()}"
-        if self.ret_dtime_to.currentIndex() > 0:
-            query += f"&ret_dtime_to={self.ret_dtime_to.currentText()}"
-        if self.ret_atime_from.currentIndex() > 0:
-            query += f"&ret_atime_from={self.ret_atime_from.currentText()}"
-        if self.ret_atime_to.currentIndex() > 0:
-            query += f"&ret_atime_to={self.ret_atime_to.currentText()}"
-        if self.stopover_from.text()!="0:00":
-            query += f"&stopover_from={self.stopover_from.text()}"
-        if self.stopover_to.text()!="0:00":
-            query += f"&stopover_to={self.stopover_to.text()}"
+        def check_tristate_to_bool(widget):
+            if widget.checkState() == Qt.CheckState.PartiallyChecked:
+                return None
+            return widget.checkState() == Qt.CheckState.Checked
 
-        return query
+        def check_tristate_to_int(widget):
+            if widget.checkState() == Qt.CheckState.PartiallyChecked:
+                return None
+            return 1 if widget.checkState() == Qt.CheckState.Checked else 0
+
+        query_params = {
+            "fly_from": self.fly_from.text(),
+            "fly_to": self.fly_to.text() or None,
+            "date_from": self.date_from.date().toString("dd/MM/yyyy"),
+            "date_to": self.date_to.date().toString("dd/MM/yyyy"),
+            "return_from": self.return_from.date().toString("dd/MM/yyyy") if self.return_from.text().strip() else None,
+            "return_to": self.return_to.date().toString("dd/MM/yyyy") if self.return_to.text().strip() else None,
+            "nights_in_dst_from": self.nights_in_dst_from.value() if self.nights_in_dst_from.text().strip() else None,
+            "nights_in_dst_to": self.nights_in_dst_to.value() if self.nights_in_dst_to.text().strip() else None,
+            "max_fly_duration": self.max_fly_duration.value() if self.max_fly_duration.text().strip() else None,
+            "ret_from_diff_city": check_tristate_to_bool(self.ret_from_diff_city),
+            "ret_to_diff_city": check_tristate_to_bool(self.ret_to_diff_city),
+            "one_for_city": check_tristate_to_int(self.one_for_city),
+            "one_per_date": check_tristate_to_bool(self.one_per_date),
+            "adults": self.adults.value() if self.adults.value() > 0 else None,
+            "children": self.children.value() if self.children.value() > 0 else None,
+            "infants": self.infants.value() if self.infants.value() > 0 else None,
+            "selected_cabins": 'MWCF'[
+                self.selected_cabins.currentIndex() - 1] if self.selected_cabins.currentIndex() > 0 else None,
+            "mix_with_cabins": 'MWCF'[
+                self.mix_with_cabins.currentIndex() - 1] if self.mix_with_cabins.currentIndex() > 0 else None,
+            "adult_hold_bag": self.adult_hold_bag.text() or None,
+            "adult_hand_bag": self.adult_hand_bag.text() or None,
+            "child_hold_bag": self.child_hold_bag.text() or None,
+            "child_hand_bag": self.child_hand_bag.text() or None,
+            "fly_days": [DAYS.index(item.text()) for item in self.fly_days.selectedItems()],
+            "fly_days_type": self.fly_days_type.currentText() if self.fly_days_type.currentIndex() != 0 else None,
+            "ret_fly_days": [DAYS.index(item.text()) for item in self.ret_fly_days.selectedItems()],
+            "ret_fly_days_type": self.ret_fly_days_type.currentText() if self.ret_fly_days_type.currentIndex() != 0 else None,
+            "only_working_days": check_tristate_to_bool(self.only_working_days),
+            "only_weekends": check_tristate_to_bool(self.only_weekends),
+            "partner_market": self.partner_market.text() or None,
+            "curr": self.currency.currentText() if self.currency.currentIndex() != 0 else None,
+            "local": self.locale.currentText() if self.locale.currentIndex() != 0 else None,
+            "price_from": self.price_from.text() if self.price_from.value() != 0 else None,
+            "price_to": self.price_to.text() if self.price_to.value() != 0 else None,
+            "dtime_from": self.dtime_from.currentText() if self.dtime_from.currentIndex() > 0 else None,
+            "dtime_to": self.dtime_to.currentText() if self.dtime_to.currentIndex() > 0 else None,
+            "atime_from": self.atime_from.currentText() if self.atime_from.currentIndex() > 0 else None,
+            "atime_to": self.atime_to.currentText() if self.atime_to.currentIndex() > 0 else None,
+            "ret_dtime_from": self.ret_dtime_from.currentText() if self.ret_dtime_from.currentIndex() > 0 else None,
+            "ret_dtime_to": self.ret_dtime_to.currentText() if self.ret_dtime_to.currentIndex() > 0 else None,
+            "stopover_from": self.stopover_from.text() if self.stopover_from.text() != "0:00" else None,
+            "stopover_to": self.stopover_to.text() if self.stopover_to.text() != "0:00" else None,
+            "max_stopovers": self.max_stopovers.value() if self.max_stopovers.value()!=0 else None,
+            "max_sector_stopovers": self.max_sector_stopovers.value() if self.max_sector_stopovers.value() != 0 else None,
+            "conn_on_diff_airport": check_tristate_to_int(self.conn_on_diff_airport),
+            "ret_from_diff_airport": check_tristate_to_int(self.ret_from_diff_airport),
+            "ret_to_diff_airport": check_tristate_to_int(self.ret_to_diff_airport),
+        }
+        # Remove None values
+        query_params = {k: v for k, v in query_params.items() if v is not None}
+        return urlencode(query_params, doseq=True)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
