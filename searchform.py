@@ -1166,7 +1166,7 @@ class Ui_searchform(object):
 
         self.retranslateUi(searchform)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(searchform)
